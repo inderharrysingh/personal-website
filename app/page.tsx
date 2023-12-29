@@ -6,6 +6,7 @@ import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
 import { draftMode } from "next/headers";
 import PreviewPosts from "@/app/_components/PreviewPosts";
 import PreviewProvider from "@/app/_components/PreviewProvider";
+import Navbar from "./_components/Navbar";
 
 export default async function Home() {
   const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
@@ -19,6 +20,10 @@ export default async function Home() {
     );
   }
 
-  return <Posts posts={posts} />;
+  return <>
+      <Navbar />
+      <Posts posts={posts} />;
+  </>
+  
 
 }

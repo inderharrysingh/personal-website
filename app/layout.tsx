@@ -16,7 +16,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}` } >
+        <div className='grid grid-cols-10 h-full'>
+            <div className="bg-black "></div>
+            <div className="bg-zinc-900 col-span-8">
+                    {children}  
+            </div>
+            <div className="bg-black"></div>
+        </div>
+      </body>
     </html>
   )
 }
