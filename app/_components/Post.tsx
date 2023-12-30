@@ -9,6 +9,9 @@ import { client } from "@/sanity/lib/client";
 const builder = imageUrlBuilder(client);
 
 
+
+
+
 export default function Post({ post }: { post: SanityDocument }) {
 
   console.log(post)

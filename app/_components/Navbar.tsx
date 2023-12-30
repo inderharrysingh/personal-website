@@ -1,8 +1,7 @@
-"use client"
-
-import { useEffect , useState } from "react";
 
 interface NavbarProps {}
+import Link from "next/link";
+
 
 const Navbar: React.FC<NavbarProps> = () => {
 
@@ -15,23 +14,23 @@ const Navbar: React.FC<NavbarProps> = () => {
         >
         <div className="flex items-center justify-center ">
             <div className="">
-                <a href="#uses" className="text-white mx-4 hover:text-fuchsia-500 ">
-                Info
-                </a>
+                <Link href={"info"} className="text-white mx-4 hover:text-fuchsia-500 ">
+                    Info
+                </Link>
             </div>
 
 
             <div className="">
-                <a href="#articles" className="text-white mx-4 hover:text-fuchsia-500 ">
-                Articles
-                </a>
+                  <Link href={"articles"} className="text-white mx-4 hover:text-fuchsia-500 ">
+                    Articles
+                </Link>
             </div>
 
 
             <div className="">
-                <a href="#projects" className="text-white mx-4 hover:text-fuchsia-500 hover:border-b-fuchsia-500">
-                Projects
-                </a>
+               <Link href={"projects"} className="text-white mx-4 hover:text-fuchsia-500 ">
+                    Projects
+                </Link>
             </div>
         </div>
         </nav>
