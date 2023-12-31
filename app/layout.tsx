@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import NextTheme from './_components/Provider/ThemeProvider'
+import Navbar from './_components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,14 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}` } >
-        <div className='grid grid-cols-10 h-full'>
-            <div className="bg-black "></div>
-            <div className="bg-zinc-900 col-span-8">
+      <body >
+        <NextTheme > 
+              <div className='bg-primary dark:bg-secondary'>
+                   <Navbar />
                     {children}  
-            </div>
-            <div className="bg-black"></div>
-        </div>
+              </div>
+          
+        </NextTheme>
       </body>
     </html>
   )
