@@ -3,9 +3,9 @@
 import { ThemeProvider } from 'next-themes'
 import { ThemeProviderProps } from 'next-themes/dist/types'
 
-function NextTheme({ children } : ThemeProviderProps) {
+function NextTheme({ children , ...pageProps } : ThemeProviderProps) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" {...pageProps}>
      {children}
     </ThemeProvider>
   )
