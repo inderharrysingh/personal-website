@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <NextTheme > 
-              <div className='bg-primary dark:bg-secondary'>
+              <div>
                    <Navbar />
                     {children}  
               </div>

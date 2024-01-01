@@ -1,4 +1,3 @@
-
 interface NavbarProps {}
 import Container from "@/components/Container";
 import Link from "next/link";
@@ -31,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 <nav className="h-18 border border-black flex  backdrop-blur-sm items-center p-5 justify-between">
 
                     <div className="flex justify-center ">
-                        <div className="justify-end text-2xl ml-0 ">Inderjot Singh</div>
+                        <div className="justify-end text-2xl ml-0 dark:text-white"> <Link href="/">Inderjot Singh</Link></div>
                     </div>
                     
                     <div className=" justify-center">

@@ -15,11 +15,20 @@ import { useTheme } from "next-themes"
 export function ChangeTheme() {
 
     const { themes , setTheme } = useTheme()
- 
+    const [mounted, setMounted] = React.useState(false)
+   
 
-    function changeTheme(newTheme : string ){
-        setTheme(newTheme)
+    React.useEffect(() => {
+      setMounted(true)
+    }, [])
+  
+   
+    if (!mounted) {
+      return null
     }
+  
+
+ 
 
   return (
     <Select >
@@ -27,9 +36,9 @@ export function ChangeTheme() {
             <SelectValue placeholder="Theme" />
         </SelectTrigger>
         <SelectContent >
-            <SelectItem value="light" onClick={() => changeTheme("light")}><Sun className="inline" ></Sun> Light</SelectItem>
-            <SelectItem value="dark" onClick={() => changeTheme("dark")}><Moon className="inline" /> Dark</SelectItem>
-            <SelectItem value="system" onClick={() => changeTheme("system")}><Monitor className="inline" /> System</SelectItem>
+            <SelectItem value="light" onClick={() => setTheme("light")}><Sun className="inline" ></Sun> Light</SelectItem>
+            <SelectItem value="dark" onClick={() => setTheme("dark")}><Moon className="inline" /> Dark</SelectItem>
+            <SelectItem value="system" onClick={() => setTheme("system")}><Monitor className="inline" /> System</SelectItem>
         </SelectContent>
 </Select>
 

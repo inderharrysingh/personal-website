@@ -17,7 +17,7 @@ export default function Post({ post }: { post: SanityDocument }) {
   console.log(post)
   return (
     <main className="container mx-auto prose prose-lg p-4">
-      {post?.title ? <h1>{post.title}</h1> : <h1>Untitled</h1>}
+      {post?.title ? <h1 className="dark:text-white">{post.title}</h1> : <h1>Untitled</h1>}
       {post?.mainImage ? (
         <Image
           className="float-left m-0 w-1/3 mr-4 rounded-lg"
@@ -27,7 +27,7 @@ export default function Post({ post }: { post: SanityDocument }) {
           alt={post?.mainImage?.alt}
         />
       ) : null}
-      {post?.body ? <PortableText value={post.body} /> : null}
+      {post?.body ? <div className="dark:text-white"><PortableText value={post.body} /> </div>: null}
     </main>
   );
 }

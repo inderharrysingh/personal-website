@@ -13,7 +13,8 @@ import { SanityDocument } from "next-sanity"
 
 
     return (
-        <Card>
+      <div className="w-60">
+        <Card >
         <CardHeader>
             <CardTitle>{ card?.title}</CardTitle>
             <CardDescription>Card Description</CardDescription>
@@ -22,9 +23,10 @@ import { SanityDocument } from "next-sanity"
             <p>Card Content</p>
         </CardContent>
         <CardFooter>
-            <p>Card Footer</p>
+            <p className="dark:text-white">{card._updatedAt}</p>
         </CardFooter>
         </Card>
+      </div>
 
     )
   }
