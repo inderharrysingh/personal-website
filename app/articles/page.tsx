@@ -1,6 +1,5 @@
 
 import { getPosts } from "@/lib/get_posts";
-import { SanityDocument } from "next-sanity";
 import { MyCard } from "../_components/Showpost";
 import Link from "next/link";
 

@@ -19,13 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body >
-        <NextTheme > 
               <div>
-                   <Navbar />
-                    {children}  
+                  <NextTheme > 
+                            <Navbar />
+                              {children}  
+                  </NextTheme>
               </div>
           
-        </NextTheme>
       </body>
     </html>
   )

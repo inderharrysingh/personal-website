@@ -14,7 +14,7 @@ import { useTheme } from "next-themes"
 
 export function ChangeTheme() {
 
-    const { themes , setTheme } = useTheme()
+    const { theme , setTheme } = useTheme()
     const [mounted, setMounted] = React.useState(false)
    
 
@@ -31,16 +31,16 @@ export function ChangeTheme() {
  
 
   return (
-    <Select >
+    <Select onValueChange={setTheme}>
         <SelectTrigger className="w-[140px]">
             <SelectValue placeholder="Theme" />
         </SelectTrigger>
-        <SelectContent >
-            <SelectItem value="light" onClick={() => setTheme("light")}><Sun className="inline" ></Sun> Light</SelectItem>
-            <SelectItem value="dark" onClick={() => setTheme("dark")}><Moon className="inline" /> Dark</SelectItem>
-            <SelectItem value="system" onClick={() => setTheme("system")}><Monitor className="inline" /> System</SelectItem>
+        <SelectContent onChange={(e) => console.log(e.target)}>
+            <SelectItem value="light"> { /**<Sun className="inline mx-auto"  />*/} Light</SelectItem>
+            <SelectItem value="dark" >{/**<Moon className="inline" /> */}Dark</SelectItem>
+            <SelectItem value="system">{/**<Monitor className="inline" /> */}System</SelectItem>
         </SelectContent>
-</Select>
+    </Select>
 
   )
 }
