@@ -12,8 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      TAG: $(git rev-parse --short ${{ github.sha }})
+  
     steps:
       -
         name: Checkout
@@ -40,7 +39,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/personal-website:${{  env.TAG }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/personal-website:${{ github.sha }}
 
 
 
@@ -48,8 +47,8 @@ jobs:
     
   updateRepo:
     runs-on: ubuntu-22.04
-    env:
-        TAG: $(git rev-parse --short ${{ github.sha }})
+    needs: build
+
 
     steps:
 
@@ -67,6 +66,6 @@ jobs:
             git config user.name "GitHub Actions Bot"
             git config user.email ""
             echo "updating image"
-            sed -i "s/image: inderharry\/personal-website:*/image: inderharry\/personal-website:${{ env.TAG }}/g" ./deployment.yaml
+            sed -i "s/image: inderharry\/personal-website:*/image: inderharry\/personal-website:${{ github.sha }}/g" ./deployment.yaml
             git push origin main
     
