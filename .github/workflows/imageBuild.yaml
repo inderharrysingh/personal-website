@@ -71,3 +71,4 @@ jobs:
             sed -i "s/image: inderharry\/personal-website:*/image: inderharry\/personal-website:${{ github.sha }}/g" ./deployment.yaml
             git push origin main
     
+            

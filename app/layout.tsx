@@ -22,7 +22,9 @@ export default function RootLayout({
               <div>
                   <NextTheme > 
                             <Navbar />
+                            <div className='lg:mt-20 ' style={{ height : "20px"}}>
                               {children}  
+                            </div>
                   </NextTheme>
               </div>
           
