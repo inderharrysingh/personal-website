@@ -4,12 +4,12 @@ RUN apk add --no-cache g++ make py3-pip libc6-compat
 
 WORKDIR /app
 
+ARG SANITY_ID
 
 ENV NEXT_PUBLIC_SANITY_PROJECT_ID=${SANITY_ID} 
 ENV NEXT_PUBLIC_SANITY_DATASET="production"
 ENV SANITY_API_READ_TOKEN=;
 
-ARG SANITY_ID
 
 COPY package*.json ./
 
