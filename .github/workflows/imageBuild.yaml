@@ -6,12 +6,12 @@ on:
       branches:
         - "main"
         - "ui"
+# add arguments to the build image 
 
-
-
+  
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
   
     steps:
       -
@@ -32,6 +32,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
 
+
       -
         name: Build and push
         uses: docker/build-push-action@v5
@@ -39,6 +40,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          build-args: SANITY_ID=${{ secrets.SANITY_ID }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/personal-website:${{ github.sha }}
 
 

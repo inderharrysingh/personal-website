@@ -26,4 +26,7 @@ build/
 
 # Ignore files and directories specific to your application
 config/
-.env
+.env*
+
+
+
