@@ -1,39 +1,55 @@
+import Image from 'next/image'
 import React from 'react'
+import imagePath from "@/public/image1.jpg"
 
-
-const dummy = {
-    heading : "DUmmy Heading",
-    description : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    tags : ["Next", "React", "TypeScript", "Sanity"],
-    left : true
+export interface ProjectInvertface {
+    heading: string ,
+    description: string  
+    tags: string[],
 }
 
-export default function ProjectCard() {
-  return (
-    <div className='flex justify-center h-96'>
-             <div className='w-1/2'>
-                    <div id='card' className='flex justify-center rounded-sm lg:w-70  border bg-gray-50 hover:bg-gray-100'>
-                                <div id="text-container" className={`flex flex-col w-1/2 p-12 gap-6 ${ dummy.left ? "pr-0" : "pl-0"  } `}>
-                                           <h1 className='text-2xl font-medium'>{dummy.heading}</h1>
-                                           <p className='text-base  leading-relaxed'>{dummy.description.substring(0, 200) + "...."}</p>
-                                           <div className='flex flex-wrap '>
-                                                        {
-                                                                dummy.tags.map( (tag, index ) => {
-                                                                    return (
-                                                                        <div className='inline p-1 rounded-lg px-2 bg-slate-900 text-white m-2' key={index}>
-                                                                            <p>{tag}</p>
-                                                                        </div>
-                                                                    )
-                                                                })
+export default function ProjectCard({ dummy } : { dummy : ProjectInvertface }) {
+    return (
 
-                                                        }
-                                           </div>
-                                </div>
-                    <div id='imageContainer' className='w-1/2'> This will Container Image</div>
-            </div>  
-        </div>
-    </div>
-  )
+                <div id='card' className='w-2/5 h-80 flex lg:justify-center flex-col lg:flex-row rounded-sm border gap-6  bg-gray-50 hover:bg-gray-100  group dark:hover:bg-gray-900 dark:bg-gray-800/70'>
+                <div id="text-container" className="group-odd:lg:order-2 text-center flex flex-col lg:w-1/3   p-4  lg:p-8 gap-6  group-even:lg:pr-0  group-odd:lg:pl-0" >
+                        <h1 className='text-2xl font-medium'>{dummy.heading}</h1>
+                        <p className='text-base  leading-relaxed'>{dummy.description.substring(0, 200) + "...."}</p>
+                        <div className='flex flex-wrap '>
+                            {
+                                dummy.tags.map((tag, index) => {
+                                    return (
+                                        <div className=' hidden xl:inline  p-1 rounded-lg px-2 bg-slate-900 text-white m-2' key={index}>
+                                            <p>{tag}</p>
+                                        </div>
+                                    )
+                                })
+
+                            }
+                        </div>
+                    </div>
+                    <div id='imageContainer' className='w-2/3 lg:block overflow-hidden '>
+
+                    <div className='w-full mt-12  h-full relative   lg:group-even:-right-10 lg:group-odd:-left-10 shadow-lg'>
+                            <Image src={imagePath} alt='ProjectImage' className='
+                                                               
+                                                               object-cover  absolute  rounded-sm 
+                                                               transition 
+                                                               group-hover:scale-[1.02]
+                                                               group-hover:-translate-x-2
+                                                               group-hover:translate-y-2
+                                                               group-hover:-rotate-1
+                                                       
+                                                               group-odd:group-hover:translate-x-2
+                                                               group-odd:group-hover:translate-y-2
+                                                               group-odd:group-hover:rotate-1
+                                                       
+                                                               group-even:right-[initial] group-even:-left-40
+                                                               ' fill={true} quality={100} />
+                        </div>
+                    </div>
+                </div>
+    )
 }
 
 

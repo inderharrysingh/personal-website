@@ -66,9 +66,10 @@ jobs:
           name: updating image
           run: |
             git config user.name "GitHub Actions Bot"
-            git config user.email ""
+            git config user.email "inderjotsingh141x@gmail.com"
             echo "updating image"
-            sed -i "s/image: inderharry\/personal-website:*/image: inderharry\/personal-website:${{ github.sha }}/g" ./deployment.yaml
+            sed -i "s/image: inderharry\/personal-website:*/image: inderharry\/personal-website:${{ github.sha }}/g" deployment.yaml
+            cat deployment.yaml
             git push origin main
     
             

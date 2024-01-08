@@ -19,15 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body >
-              <div>
-                  <NextTheme > 
-                            <Navbar />
-                            <div className='lg:mt-20 ' style={{ height : "20px"}}>
-                              {children}  
-                            </div>
-                  </NextTheme>
-              </div>
-          
+        <div>
+          <NextTheme >
+            <Navbar />
+            <div className='mt-20 h-24' > 
+              {children}
+            </div>
+          </NextTheme>
+        </div>
+
       </body>
     </html>
   )

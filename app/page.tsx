@@ -4,7 +4,7 @@ import BackColor from "./_components/BackColor"
 import Heading from "./_components/Heading"
 import About from "./_components/Sections/About"
 import Projects from "./_components/Sections/Projects"
-
+import StickyTheme from "./_components/StickyTheme"
 
 export default async function Home() {
   
@@ -16,6 +16,7 @@ export default async function Home() {
                <BackColor />
                <About />
                <Projects />
+               <StickyTheme /> 
              </div>
         </Fragment>
   ) 
