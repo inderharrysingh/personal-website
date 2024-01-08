@@ -2,8 +2,6 @@
 interface NavbarProps { }
 import Container from "@/components/Container";
 import Link from "next/link";
-import { Button } from "@/components/ui/button"
-import { ChangeTheme } from "@/components/ChangeTheme";
 
 const NavLinks = [
     {
@@ -27,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
 
         <Container>
-            <div className="fixed top-0 w-full  ">
+            <div className="fixed top-0 w-full z-10 ">
                 <nav className=" h-18 border   flex  backdrop-blur-xl bg-white/10 dark:bg-black/10 items-center p-5 justify-between">
 
                     <div className="flex justify-center ">

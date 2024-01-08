@@ -1,7 +1,6 @@
 import React from 'react'
 import Heading from '../Heading'
 import ProjectCard, { ProjectInvertface } from '../ProjectCard'
-import ProjectInterface from "@/app/_components/ProjectCard"
 
 
 const data: ProjectInvertface[] = [
@@ -22,7 +21,7 @@ export default function Projects() {
   return (
     <div className='w-full'>
       <Heading title='Projects' />
-          <div className='flex gap-12 flex-col justify-center items-center'>
+          <div className='flex gap-12  flex-col justify-center items-center'>
                     { data.map( (Card , index ) => < ProjectCard key={index} dummy={Card} /> )}
                 </div>
 

@@ -5,6 +5,7 @@ import Heading from "./_components/Heading"
 import About from "./_components/Sections/About"
 import Projects from "./_components/Sections/Projects"
 import StickyTheme from "./_components/StickyTheme"
+import BackgroudAnimate from "./_components/BackgroudAnimation"
 
 export default async function Home() {
   
@@ -13,10 +14,11 @@ export default async function Home() {
              <div>
                 
                <Me />
-               <BackColor />
+               {/* <BackColor /> */}
                <About />
                <Projects />
                <StickyTheme /> 
+               <BackgroudAnimate />
              </div>
         </Fragment>
   ) 
