@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import NextTheme from './_components/Provider/ThemeProvider'
 import Navbar from './_components/Navbar'
+import BackgroudAnimate from "./_components/BackgroudAnimation"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,10 @@ export default function RootLayout({
         <div>
           <NextTheme >
             <Navbar />
-            <div className='mt-20 h-24' > 
+            <BackgroudAnimate />
+
+            <div className='mt-20 h-24' >
+
               {children}
             </div>
           </NextTheme>

@@ -1,6 +1,6 @@
 import Me from "@/app/_components/Me"
 import { Fragment } from "react"
-import BackColor from "./_components/BackColor"
+// import BackColor from "./_components/BackColor"
 import About from "./_components/Sections/About"
 import Projects from "./_components/Sections/Projects"
 import StickyTheme from "./_components/StickyTheme"
@@ -13,7 +13,8 @@ export default async function Home() {
     <Fragment>
       <div>
         <Me />
-        <BackColor />
+        {/* <BackColor /> */}
+        {/* <BackgroudAnimate /> */}
         <About />
         <Projects />
         <StickyTheme />
