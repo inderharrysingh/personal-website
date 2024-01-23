@@ -5,15 +5,15 @@ import Link from "next/link";
 
 const NavLinks = [
     {
-        href: 'info',
+        href: '#info',
         title: 'Info'
     },
     {
-        href: 'about',
+        href: '#about',
         title: 'About'
     },
     {
-        href: 'articles',
+        href: '#articles',
         title: 'Articles'
     }
 ]
@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
 
         <Container>
-            <div className="fixed top-0 w-full z-10 ">
+            <div className="fixed h-5 top-0 w-full z-10 ">
                 <nav className=" h-18 border   flex  backdrop-blur-xl bg-white/10 dark:bg-black/10 items-center p-5 justify-between">
 
                     <div className="flex justify-center ">
@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                             NavLinks.map((navItem, index) => {
                                 return (
                                     <Link key={index} href={navItem.href} className=" text-sm mx-2 md:mx-5 md:text-lg ">
-                                            {navItem.title}
+                                        {navItem.title}
                                     </Link>
                                 )
                             })

@@ -1,11 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -59,4 +60,9 @@
     --ring: 224.3 76.3% 48%;
   }
 
+}
+
+
+.resume_shadow {
+  box-shadow: 0 0 80px rgba(167, 52, 249, 0.93);
 }

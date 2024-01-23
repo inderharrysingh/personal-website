@@ -18,14 +18,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body >
+    <html lang="en" suppressHydrationWarning className='min-w-full min-h-full'>
+      <body className='min-w-full min-h-full' >
         <div>
           <NextTheme >
             <Navbar />
             <BackgroudAnimate />
 
-            <div className='mt-20 h-24' >
+            <div className='flex w-full h-full mt-20 ' >
 
               {children}
             </div>

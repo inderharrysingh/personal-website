@@ -10,18 +10,14 @@ import Experience from "./_components/Experience"
 export default async function Home() {
 
   return (
-    <Fragment>
-      <div>
-        <Me />
-        {/* <BackColor /> */}
-        {/* <BackgroudAnimate /> */}
-        <About />
-        <Projects />
-        <StickyTheme />
-        < Skill />
-        <Experience />
-      </div>
-    </Fragment>
+    <div className="flex flex-col w-full h-full">
+      <Me />
+      <About />
+      <Projects />
+      <StickyTheme />
+      < Skill />
+      <Experience />
+    </div>
   )
 
 
