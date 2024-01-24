@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion, useTransform, useScroll } from "framer-motion"
 import Image from 'next/image'
 import React from 'react'
 import { useRef } from 'react'
@@ -18,12 +18,15 @@ export default function ProjectCard({ dummy }: { dummy: ProjectInvertface }) {
 
 
     const cardRef = useRef(null)
-    const isInView = useInView(cardRef, { margin: "0px 100px 0px 300px" })
+    const { scrollYProgress } = useScroll({
+        target: cardRef,
+        offset: ["0 1", "1.33 1"]
+    })
 
-    const variants = {
-        "hidden": { scale: 0.6 },
-        "visible": { scale: 1.0 }
-    }
+    const cardScale = useTransform(scrollYProgress, [0, 1], [0.8, 1])
+    const cardOpacity = useTransform(scrollYProgress, [0, 1], [0.7, 1])
+
+
 
 
 
@@ -33,10 +36,12 @@ export default function ProjectCard({ dummy }: { dummy: ProjectInvertface }) {
 
         <motion.div
             ref={cardRef}
-            variants={variants}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1.2 }}
+            style={{
+                scale: cardScale,
+                opacity: cardOpacity
+            }}
+            transition={{ duration: 2 }}
             id='card' className='w-8/12 
               md:w-7/12 lg:w-2/5 h-80 flex lg:justify-center 
               flex-row lg:flex-row rounded-sm border bg-gray-50
@@ -57,8 +62,6 @@ export default function ProjectCard({ dummy }: { dummy: ProjectInvertface }) {
                                                                  lg:group-hover:-translate-x-2
                                                                lg:group-hover:translate-y-2
                                                                 lg:group-hover:-rotate-1
-                                                             
-                                                       
                                                                lg:group-odd:group-hover:translate-x-2
                                                              lg:group-odd:group-hover:translate-y-2
                                                               lg:group-odd:group-hover:rotate-1

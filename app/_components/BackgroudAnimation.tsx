@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import SvgComponent from './Svg'
+import LighSvg from "./LightSvg"
+import { useTheme } from 'next-themes'
 function AnimationComponent() {
 
   const [number, setNumber] = useState(0)
+  const { theme } = useTheme()
   const variants = {
     "one": [
       {
@@ -71,6 +74,9 @@ function AnimationComponent() {
 
   }, [number])
 
+  console.log("theme")
+  console.log(theme)
+
   return (
 
     <div className='absolute inset-0 overflow-hidden pointer-events-none blur-3xl backdrop-blur-3xl -z-10'>
@@ -79,21 +85,22 @@ function AnimationComponent() {
         animate={variants.one[number]}
         transition={{ duration: 3 }}
       >
-        <SvgComponent />
+
+        {theme == "dark" ? <SvgComponent /> : <LighSvg />}
       </motion.div>
 
       <motion.div className='w-full max-w-[1200px] min-w-[600px] absolute top-[10%] left-0 lg:top-0 lg:left-0'
         animate={variants.two[number]}
         transition={{ duration: 3 }}
       >
-        <SvgComponent />
+        {theme == "dark" ? <SvgComponent /> : <LighSvg />}
       </motion.div>
 
       <motion.div className='w-full max-w-[1200px] min-w-[600px] absolute -bottom-[70%] -right-[40%]'
         animate={variants.three[number]}
         transition={{ duration: 3 }}
       >
-        <SvgComponent />
+        {theme == "dark" ? <SvgComponent /> : <LighSvg />}
       </motion.div>
     </div>
 

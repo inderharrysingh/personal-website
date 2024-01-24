@@ -23,7 +23,6 @@ export default function RootLayout({
         <div>
           <NextTheme >
             <Navbar />
-            <BackgroudAnimate />
 
             <div className='flex w-full h-full mt-20 ' >
 

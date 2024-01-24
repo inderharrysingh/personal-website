@@ -1,9 +1,11 @@
+'use client'
 import Image from "next/image"
 
 import me from "@/public/me.jpeg"
 import { Linkedin, Github, Instagram, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import BackgroudAnimation from "@/app/_components/BackgroudAnimation"
 
 
 export default function Me() {
@@ -26,6 +28,7 @@ export default function Me() {
                     transition-all hover:bg-purple-500 resume_shadow">Resume</Link>
                 </div>
             </div>
+            <BackgroudAnimation />
 
 
         </>
