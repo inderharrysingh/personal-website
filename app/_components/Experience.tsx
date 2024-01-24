@@ -1,46 +1,44 @@
-"use client"
+"use client";
 
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import { Briefcase, WorkflowIcon } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { Fragment } from 'react';
+import React from "react";
+
+import {
+    VerticalTimeline,
+    VerticalTimelineElement,
+} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
+import { experiencesData } from "@/lib/data";
+import { useTheme } from "next-themes";
 
 export default function Experience() {
-
     const { theme } = useTheme()
 
-    const exp_data = [
-
-        { date: "2023 - Present", description: "Creative Direction, User Experience, Visual Design, Project Management, Team Leading", title: "Bondu", location: "randua ", icon: <Briefcase /> },
-        { date: "2023 - Present", description: "Creative Direction, User Experience, Visual Design, Project Management, Team Leading", title: "Bondu", location: "randua ", icon: <Briefcase /> },
-        { date: "2023 - Present", description: "Creative Direction, User Experience, Visual Design, Project Management, Team Leading", title: "Bondu", location: "randua ", icon: <Briefcase /> },
-    ]
     return (
-
-        <div className='w-full h-full bg-pink-400'>
-
-            <VerticalTimeline lineColor="">
-                {exp_data.map((item, index) => (
-                    <Fragment key={index}>
+        <section id="experience" className="scroll-mt-28 mb-28 sm:mb-40">
+            <VerticalTimeline lineColor="#9ca3af">
+                {experiencesData.map((item, index) => (
+                    <React.Fragment key={index}>
                         <VerticalTimelineElement
                             contentStyle={{
-                                background: "rgba(255, 255, 255, 0.05)",
+
+                                background:
+                                    theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
                                 boxShadow: "none",
                                 border: "1px solid rgba(0, 0, 0, 0.05)",
                                 textAlign: "left",
                                 padding: "1.3rem 2rem",
                             }}
-
-
                             contentArrowStyle={{
-                                borderRight: "0.4rem solid rgba(255, 255, 255, 0.5)",
+                                borderRight:
+                                    theme === "light"
+                                        ? "0.4rem solid #9ca3af"
+                                        : "0.4rem solid rgba(255, 255, 255, 0.5)",
                             }}
                             date={item.date}
                             icon={item.icon}
                             iconStyle={{
-                                background: "rgba(255, 255, 255, 0.15)",
+                                background:
+                                    theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
                                 fontSize: "1.5rem",
                             }}
                         >
@@ -50,10 +48,9 @@ export default function Experience() {
                                 {item.description}
                             </p>
                         </VerticalTimelineElement>
-                    </Fragment>
+                    </React.Fragment>
                 ))}
             </VerticalTimeline>
-        </div>
-    )
-
+        </section>
+    );
 }

@@ -28,7 +28,6 @@ export default function Me() {
                     transition-all hover:bg-purple-500 resume_shadow">Resume</Link>
                 </div>
             </div>
-            <BackgroudAnimation />
 
 
         </>

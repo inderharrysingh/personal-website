@@ -74,9 +74,6 @@ function AnimationComponent() {
 
   }, [number])
 
-  console.log("theme")
-  console.log(theme)
-
   return (
 
     <div className='absolute inset-0 overflow-hidden pointer-events-none blur-3xl backdrop-blur-3xl -z-10'>
@@ -85,7 +82,6 @@ function AnimationComponent() {
         animate={variants.one[number]}
         transition={{ duration: 3 }}
       >
-
         {theme == "dark" ? <SvgComponent /> : <LighSvg />}
       </motion.div>
 
