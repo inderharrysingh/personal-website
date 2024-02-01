@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
     VerticalTimeline,
@@ -12,6 +12,14 @@ import { useTheme } from "next-themes";
 
 export default function Experience() {
     const { theme } = useTheme()
+
+    const [isMounted, setMounted] = useState<boolean>(false)
+
+    useEffect(() => {
+
+        setMounted(true)
+    }, [])
+
 
     return (
         <section id="experience" className="scroll-mt-28 mb-28 sm:mb-40">

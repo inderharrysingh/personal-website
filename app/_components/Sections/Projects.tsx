@@ -2,7 +2,8 @@
 
 import React from 'react'
 import Heading from '../Heading'
-import ProjectCard, { ProjectInvertface } from '../ProjectCard'
+import { SmallProjectCard, ProjectInvertface } from '../SmallProjectCard'
+import { LargeProjectCard } from '../LargeProjectCard'
 
 
 const data: ProjectInvertface[] = [
@@ -24,7 +25,11 @@ export default function Projects() {
     <div className='min-w-full h-full mt-10'>
       <Heading title='Projects' />
       <div className='flex space-y-20 flex-col justify-center items-center'>
-        {data.map((Card, index) => < ProjectCard key={index} dummy={Card} />)}
+        {data.map((Card, index) =>
+
+          <LargeProjectCard className='' key={index} dummy={Card} />
+
+        )}
       </div>
     </div>
   )

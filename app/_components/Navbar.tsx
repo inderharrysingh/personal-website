@@ -13,7 +13,7 @@ const NavLinks = [
         title: 'About'
     },
     {
-        href: '#articles',
+        href: "/articles",
         title: 'Articles'
     }
 ]
