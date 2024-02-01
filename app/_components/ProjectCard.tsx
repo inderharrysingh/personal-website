@@ -55,7 +55,7 @@ export default function ProjectCard({ dummy }: { dummy: ProjectInvertface }) {
 
                 <div className='w-full h-full relative   lg:group-even:-right-10 lg:group-odd:-left-10 shadow-lg'>
                     <Image src={imagePath} alt='ProjectImage' className='
-                                                               
+                                                              transition-all 
                                                                object-cover  absolute  rounded-sm 
                                                                lg:transition 
                                                                 lg:group-hover:scale-[1.02]

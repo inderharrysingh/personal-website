@@ -20,12 +20,12 @@ export default function StickyTheme() {
     }
 
     return (
-        <div className="fixed border-2 hover:scale-110 border-black p-2 dark:border-white rounded-full mr-5 mb-5 bottom-0 right-0">
+        <div className="fixed transition-all border-2 hover:scale-110 border-black p-2 dark:border-white rounded-full mr-5 mb-5 bottom-0 right-0">
             {
                 theme == "dark" ?
-                    <Sun size={30}  onClick={() => setTheme("light")} />
+                    <Sun size={30} className="cursor-pointer " onClick={() => setTheme("light")} />
                     :
-                    <Moon size={30} onClick={() => setTheme("dark")} />
+                    <Moon size={30} className="cursor-pointer" onClick={() => setTheme("dark")} />
 
             }
         </div>

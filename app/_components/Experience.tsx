@@ -19,6 +19,7 @@ export default function Experience() {
                 {experiencesData.map((item, index) => (
                     <React.Fragment key={index}>
                         <VerticalTimelineElement
+
                             contentStyle={{
 
                                 background:
@@ -38,7 +39,7 @@ export default function Experience() {
                             icon={item.icon}
                             iconStyle={{
                                 background:
-                                    theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
+                                    theme === "light" ? "white" : "rgba(0,0,0, 0.9)",
                                 fontSize: "1.5rem",
                             }}
                         >
