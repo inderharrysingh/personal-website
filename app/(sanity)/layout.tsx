@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
-import NextTheme from './_components/Provider/ThemeProvider'
-import Navbar from './_components/Navbar'
-import BackgroudAnimate from "./_components/BackgroudAnimation"
+import '@/app/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,17 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className='min-w-full min-h-full'>
       <body className='min-w-full min-h-full' >
-        <div>
-          <NextTheme >
-            <Navbar />
-            <BackgroudAnimate />
-            <div className='flex w-full h-full mt-20 ' >
-
-              {children}
-            </div>
-          </NextTheme>
-        </div>
-
+        {children}
       </body>
     </html>
   )
